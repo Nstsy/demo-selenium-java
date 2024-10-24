@@ -16,4 +16,17 @@ public class LoginTest {
         WebElement buttonWebElement = webDriver.findElement(buttonBy);
         buttonWebElement.click();
     }
+    @Test
+    public void test2() {
+        WebDriver webDriver = new ChromeDriver();
+        webDriver.get("https://secure.login.gov/");
+        String inputEmailXpath = "//*[@id=\"user_email\"]";
+        By inputEmailBy = By.xpath(inputEmailXpath);
+        WebElement inputEmailWebElement = webDriver.findElement(inputEmailBy);
+        inputEmailWebElement.sendKeys("testA@test.com");
+        String buttonXpath = "//*[@id=\"new_user\"]/lg-submit-button/button";
+        By buttonBy = By.xpath(buttonXpath);
+        WebElement buttonWebElement = webDriver.findElement(buttonBy);
+        buttonWebElement.click();
+    }
 }
