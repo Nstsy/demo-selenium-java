@@ -34,12 +34,28 @@ public class LoginTest {
     public void test3() {
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://secure.login.gov/");
-
         String inputPasswordXpath = "/html/body/main/div/form/lg-password-toggle/lg-validated-field/div/input";
         By inputPasswordBy = By.xpath(inputPasswordXpath);
         WebElement inputPasswordWebElement = webDriver.findElement(inputPasswordBy);
         inputPasswordWebElement.sendKeys("1q2w#E4r");
+        String buttonXpath = "//*[@id=\"new_user\"]/lg-submit-button/button";
+        By buttonBy = By.xpath(buttonXpath);
+        WebElement buttonWebElement = webDriver.findElement(buttonBy);
+        buttonWebElement.click();
+    }
 
+    @Test
+    public void test4() {
+        WebDriver webDriver = new ChromeDriver();
+        webDriver.get("https://secure.login.gov/");
+        String inputEmailXpath = "//*[@id=\"user_email\"]";
+        By inputEmailBy = By.xpath(inputEmailXpath);
+        WebElement inputEmailWebElement = webDriver.findElement(inputEmailBy);
+        inputEmailWebElement.sendKeys("testA@test.com");
+        String inputPasswordXpath = "/html/body/main/div/form/lg-password-toggle/lg-validated-field/div/input";
+        By inputPasswordBy = By.xpath(inputPasswordXpath);
+        WebElement inputPasswordWebElement = webDriver.findElement(inputPasswordBy);
+        inputPasswordWebElement.sendKeys("1q2w#E4r");
         String buttonXpath = "//*[@id=\"new_user\"]/lg-submit-button/button";
         By buttonBy = By.xpath(buttonXpath);
         WebElement buttonWebElement = webDriver.findElement(buttonBy);
